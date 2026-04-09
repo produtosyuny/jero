@@ -3,157 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo Cigana - Formação Despertar Intuitivo</title>
+    <title>Mundo Cigana - Despertar Intuitivo</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Paleta Mística e Clara */
-            --mystic-purple: #4b2c5e; /* Roxo Profundo (Intuição) */
-            --soft-gold: #d4af37;    /* Dourado (Espiritualidade) */
-            --bg-cream: #fdfbf7;      /* Fundo suave (Clareza) */
+            --mystic-purple: #4b2c5e;
+            --soft-gold: #d4af37;
+            --bg-cream: #fdfbf7;
             --text-main: #3d3440;
             --accent-light: #f5f0f9;
+            --sidebar-width: 260px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
             background-color: var(--bg-cream); 
             color: var(--text-main); 
             font-family: 'Montserrat', sans-serif; 
-            display: flex; 
-            height: 100vh; 
+            display: flex;
+            min-height: 100vh;
         }
 
-        /* --- MENU LATERAL (Mais leve e minimalista) --- */
+        /* --- SIDEBAR RESPONSIVA --- */
         .sidebar { 
-            width: 260px; 
+            width: var(--sidebar-width); 
             background: white; 
             border-right: 1px solid #eee; 
             padding: 30px 15px;
             display: flex;
             flex-direction: column;
+            flex-shrink: 0;
         }
+        
         .logo { 
             font-family: 'Playfair Display', serif; 
-            font-size: 1.4rem; 
+            font-size: 1.2rem; 
             color: var(--mystic-purple); 
             text-align: center; 
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             letter-spacing: 2px;
         }
+
         .nav-item { 
             padding: 12px 15px; 
-            margin-bottom: 8px; 
-            border-radius: 20px; 
-            font-size: 0.85rem; 
-            cursor: pointer; 
-            transition: 0.3s;
-            color: #777;
-        }
-        .nav-item.active { 
-            background: var(--accent-light); 
-            color: var(--mystic-purple); 
-            font-weight: 600; 
-        }
-
-        /* --- ÁREA PRINCIPAL --- */
-        .main-content { flex: 1; overflow-y: auto; padding: 60px 40px; }
-        .container { max-width: 850px; margin: 0 auto; }
-
-        .header-section { text-align: center; margin-bottom: 50px; }
-        .header-section span { 
-            color: var(--soft-gold); 
+            margin-bottom: 5px; 
+            border-radius: 15px; 
             font-size: 0.8rem; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 3px;
-        }
-        h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.5rem; 
-            color: var(--mystic-purple); 
-            margin-top: 10px;
+            cursor: pointer; 
+            color: #777;
+            transition: 0.3s;
         }
 
-        /* --- SEÇÃO 1: RESUMO (Imagem + Cards) --- */
+        .nav-item.active { background: var(--accent-light); color: var(--mystic-purple); font-weight: 600; }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        .main-content { flex: 1; padding: 40px 20px; overflow-x: hidden; }
+        .container { max-width: 800px; margin: 0 auto; }
+
+        .header-section { text-align: center; margin-bottom: 40px; }
+        .header-section span { color: var(--soft-gold); font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--mystic-purple); margin-top: 5px; }
+
+        /* --- SEÇÃO RESUMO --- */
         .lesson-image { 
             width: 100%; 
-            height: 350px; 
-            background: url('https://images.unsplash.com/photo-1590424600002-941ce32ee214?auto=format&fit=crop&q=80&w=1000') center/cover;
-            border-radius: 30px 30px 0 0; 
-            margin-bottom: -40px;
+            height: 300px; 
+            /* Link direto da imagem do GitHub */
+            background: url('https://raw.githubusercontent.com/produtosyuny/jero/main/Gemini_Generated_Image_pu50d9pu50d9pu50.png') center/cover no-repeat;
+            border-radius: 20px 20px 0 0; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
+
         .summary-overlay {
             background: white;
-            border-radius: 25px;
-            padding: 40px;
+            border-radius: 20px;
+            padding: 30px;
             box-shadow: 0 10px 30px rgba(75, 44, 94, 0.05);
-            margin-bottom: 50px;
+            margin-top: -30px;
+            margin-bottom: 40px;
             position: relative;
-            z-index: 2;
         }
+
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--mystic-purple);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+        .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        
         .card-intuitivo {
             background: var(--bg-cream);
-            padding: 20px;
-            border-radius: 15px;
+            padding: 15px;
+            border-radius: 12px;
             text-align: center;
             border: 1px solid #f0e6d2;
         }
-        .card-intuitivo h4 { font-size: 0.9rem; color: var(--soft-gold); margin-bottom: 10px; }
-        .card-intuitivo p { font-size: 0.8rem; line-height: 1.4; color: #666; }
+        .card-intuitivo h4 { font-size: 0.8rem; color: var(--soft-gold); margin-bottom: 5px; }
+        .card-intuitivo p { font-size: 0.75rem; color: #666; line-height: 1.3; }
 
-        /* --- SEÇÃO 2: PDF (O Principal) --- */
+        /* --- PDF BOX --- */
         .pdf-box {
             background: var(--mystic-purple);
-            padding: 40px;
-            border-radius: 25px;
+            padding: 25px;
+            border-radius: 20px;
             color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            gap: 20px;
         }
-        .pdf-box h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 8px; }
-        .pdf-box p { font-size: 0.85rem; opacity: 0.8; }
+        .pdf-box h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+        .pdf-box p { font-size: 0.8rem; opacity: 0.8; }
+        
         .btn-pdf {
             background: var(--soft-gold);
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            text-align: center;
         }
-        .btn-pdf:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
 
-        /* --- SEÇÃO 3: TREINO --- */
+        /* --- PRÁTICA --- */
         .practice-section {
             background: white;
-            padding: 40px;
-            border-radius: 25px;
-            border-left: 5px solid var(--soft-gold);
+            padding: 25px;
+            border-radius: 20px;
+            border-left: 4px solid var(--soft-gold);
         }
         .practice-item {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            padding: 15px;
+            gap: 12px;
+            margin-top: 15px;
+            padding: 12px;
             background: var(--bg-cream);
-            border-radius: 12px;
+            border-radius: 10px;
         }
-        .icon-star { color: var(--soft-gold); font-size: 1.2rem; }
+
+        /* --- MEDIA QUERIES (Ajustes para Celular) --- */
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar { 
+                width: 100%; 
+                height: auto; 
+                padding: 15px; 
+                flex-direction: row; 
+                overflow-x: auto;
+                border-bottom: 1px solid #eee;
+            }
+            .logo { margin-bottom: 0; margin-right: 20px; font-size: 1rem; }
+            .nav-item { white-space: nowrap; padding: 8px 12px; }
+            
+            .main-content { padding: 20px 15px; }
+            h1 { font-size: 1.6rem; }
+            .lesson-image { height: 200px; }
+            
+            .cards-grid { grid-template-columns: 1fr; } /* Cards empilhados no celular */
+            
+            .pdf-box { flex-direction: column; text-align: center; }
+            .btn-pdf { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -161,32 +180,33 @@
     <aside class="sidebar">
         <div class="logo">MUNDO CIGANA</div>
         <div class="nav-item active">1.1 O Chamado</div>
-        <div class="nav-item">1.2 Conexão Espiritual</div>
-        <div class="nav-item">1.3 Tarot vs Cigano</div>
-        </aside>
+        <div class="nav-item">1.2 Conexão</div>
+        <div class="nav-item">1.3 Diferenças</div>
+    </aside>
 
     <main class="main-content">
         <div class="container">
             <div class="header-section">
-                <span>Capítulo 1</span>
+                <span>Capítulo 1.1</span>
                 <h1>O Chamado do Tarot Cigano</h1>
             </div>
 
             <div class="lesson-image"></div>
+            
             <div class="summary-overlay">
-                <h2 class="section-title">✨ Resumo da Jornada</h2>
+                <h2 class="section-title">✨ Resumo do Despertar</h2>
                 <div class="cards-grid">
                     <div class="card-intuitivo">
                         <h4>Espelho da Vida</h4>
-                        <p>O Tarot é um reflexo do seu agora, não uma sentença.</p>
+                        <p>O Tarot reflete sua realidade, não é uma sentença fixa.</p>
                     </div>
                     <div class="card-intuitivo">
-                        <h4>Clareza</h4>
-                        <p>36 cartas conectadas ao seu cotidiano sem enigmas.</p>
+                        <h4>Clareza Direta</h4>
+                        <p>Um sistema de 36 cartas focado no seu dia a dia.</p>
                     </div>
                     <div class="card-intuitivo">
-                        <h4>A Ponte</h4>
-                        <p>A união entre a estrutura lógica e a sua intuição.</p>
+                        <h4>Sua Intuição</h4>
+                        <p>A ponte entre a lógica das cartas e a voz do seu coração.</p>
                     </div>
                 </div>
             </div>
@@ -195,17 +215,17 @@
             <div class="pdf-box">
                 <div>
                     <h3>Manual: Despertar Intuitivo</h3>
-                    <p>O coração do aprendizado deste capítulo está aqui.</p>
+                    <p>Abra o guia completo deste capítulo (PDF).</p>
                 </div>
-                <a href="#" class="btn-pdf">ABRIR MANUAL</a>
+                <a href="https://drive.google.com/file/d/1sLzCgSkTcJUrugBfVZpsZMH-W1IBi8-H/view?usp=sharing" target="_blank" class="btn-pdf">VER PDF COMPLETO</a>
             </div>
 
-            <h2 class="section-title">🔮 Prática de Conexão</h2>
+            <h2 class="section-title">🔮 Exercício Prático</h2>
             <div class="practice-section">
-                <p style="font-size: 0.9rem;">Para despertar sua percepção hoje:</p>
+                <p style="font-size: 0.85rem; color: #666;">Para hoje:</p>
                 <div class="practice-item">
-                    <span class="icon-star">★</span>
-                    <p style="font-size: 0.85rem;">Segure seu baralho por 5 minutos, respire fundo e peça que as mensagens venham com <strong>clareza e luz</strong>.</p>
+                    <span style="color: var(--soft-gold);">★</span>
+                    <p style="font-size: 0.8rem;">Respire fundo, segure seu baralho e sinta a curiosidade que te trouxe até aqui. Ela é o seu primeiro portal.</p>
                 </div>
             </div>
         </div>
