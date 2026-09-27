@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Èjì Ogbè - Tratado Avançado de Ifá</title>
-    <!-- Google Fonts para tipografia refinada -->
+    <title>Tratado Avançado de Ifá • Oju Odu (1º e 2º Odus)</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -34,6 +34,7 @@
             font-family: var(--font-sans);
             line-height: 1.8;
             padding: 2rem 1rem;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -41,11 +42,59 @@
             margin: 0 auto;
         }
 
+        /* Barra de Seleção Rápida Superior Fixa */
+        .quick-nav {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.9rem 1.4rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3.5rem;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+            gap: 12px;
+            position: sticky;
+            top: 1rem;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .quick-nav span {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .quick-nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .quick-nav-links a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .quick-nav-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
         header {
             text-align: center;
             margin-bottom: 3rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 2rem;
+        }
+
+        .odu-divider {
+            margin: 5rem 0 3rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
         }
 
         .odu-order {
@@ -59,13 +108,13 @@
 
         h1 {
             font-family: var(--font-serif);
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
         .odu-sign-visual {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             letter-spacing: 15px;
             color: var(--accent-gold);
             margin: 1.5rem 0;
@@ -79,7 +128,7 @@
             margin: 0 auto;
         }
 
-        /* Estilização dos Blocos Expansíveis (Details / Summary) */
+        /* Estilização dos Blocos Expansíveis */
         details {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -95,9 +144,9 @@
 
         summary {
             font-family: var(--font-serif);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent-gold);
-            padding: 1.5rem 2rem;
+            padding: 1.4rem 2rem;
             cursor: pointer;
             user-select: none;
             display: flex;
@@ -112,7 +161,7 @@
 
         summary::after {
             content: '+';
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: 300;
             color: var(--accent-gold);
             transition: transform 0.3s ease;
@@ -154,14 +203,20 @@
                 grid-template-columns: 1fr;
             }
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.1rem;
             }
             summary {
-                font-size: 1.25rem;
+                font-size: 1.15rem;
                 padding: 1.2rem;
             }
             .content-body {
                 padding: 0 1.2rem 1.2rem 1.2rem;
+            }
+            .quick-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                position: relative;
+                top: 0;
             }
         }
 
@@ -202,8 +257,19 @@
 
     <div class="container">
         
-        <!-- Cabeçalho do Odu -->
-        <header>
+        <!-- Barra de Seleção Rápida Superior Fixa -->
+        <nav class="quick-nav">
+            <span>📚 Seleção de Odus Principais:</span>
+            <div class="quick-nav-links">
+                <a href="#eji-ogbe">1. Èjì Ogbè</a>
+                <a href="#eji-oyeku">2. Èjì Oyeku</a>
+            </div>
+        </nav>
+
+        <!-- ========================================== -->
+        <!-- PARTE 1: ÈJÌ OGBÈ (1º ODU) -->
+        <!-- ========================================== -->
+        <header id="eji-ogbe">
             <div class="odu-order">1º Odu Principal (Oju Odu) &bull; Tratado da Segunda Mão</div>
             <h1>Èjì Ogbè</h1>
             <div class="odu-sign-visual">
@@ -215,9 +281,8 @@
             <p class="subtitle">O alicerce supremo de Ifá. A dualidade da luz que revela, o peso do discernimento e a responsabilidade intransferível do Ìwà.</p>
         </header>
 
-        <!-- Tópico 1: Pronúncia, Etimologia e Significado -->
         <details open>
-            <summary>1. Pronúncia, Etimologia e Significado Profundo</summary>
+            <summary>1. Pronúncia, Etimologia e Significado Profundo (Èjì Ogbè)</summary>
             <div class="content-body">
                 <p><strong>Pronúncia Fonética:</strong> <em>Ê-di O-gbê</em> (com o "j" com som de dj e o "gb" pronunciado com a oclusiva labio-velar tradicional do Iorubá).</p>
                 <p><strong>Etimologia e Significado:</strong> <strong>Èjì</strong> deriva de *Ejìri* ou *Meji* (duplo, duplicado, par perfeito). <strong>Ogbè</strong> carrega a raiz do verbo *gbè* (receber, sustentar, abrigar, erguer). Literalmente, Èjì Ogbè significa "As duas colunas de Ogbè que se sustentam mutuamente" ou "O duplo poder de receber e amparar o destino".</p>
@@ -225,9 +290,8 @@
             </div>
         </details>
 
-        <!-- Tópico 2: A Leitura no Opón Ifá -->
         <details>
-            <summary>2. A Leitura no Opón Ifá: Traduzindo o Odu para o Consulente</summary>
+            <summary>2. A Leitura no Opón Ifá (Èjì Ogbè)</summary>
             <div class="content-body">
                 <p>Quando Èjì Ogbè surge no tabuleiro durante um jogo, ele funciona como uma **luz cirúrgica e implacável**. O sacerdote não deve cair na armadilha de ditar um veredito simplista de "sorte garantida". O odu apresenta o potencial de vitória, mas condiciona sua manifestação à maturidade do consulente.</p>
                 <div class="highlight-box">
@@ -241,9 +305,8 @@
             </div>
         </details>
 
-        <!-- Tópico 3: Pontos de Atenção (Luz e Sombra / Positivo e Negativo) -->
         <details>
-            <summary>3. Pontos de Atenção: Manifestações de Luz e Sombra</summary>
+            <summary>3. Pontos de Atenção: Luz e Sombra (Èjì Ogbè)</summary>
             <div class="content-body">
                 <div class="grid-2">
                     <div>
@@ -268,9 +331,8 @@
             </div>
         </details>
 
-        <!-- Tópico 4: Relação com os Aspectos da Vida (Relacionamentos, Mental, Saúde) -->
         <details>
-            <summary>4. Relação com os Aspectos da Vida</summary>
+            <summary>4. Relação com os Aspectos da Vida (Èjì Ogbè)</summary>
             <div class="content-body">
                 <p><strong>Nos Relacionamentos:</strong> Èjì Ogbè exige transparência absoluta. Relações baseadas em segredos, jogos de poder ou manipulação ruem sob este odu. O consulente precisa aprender a liderar pelo exemplo afetuoso e não pela imposição. Em parcerias afetivas, busca alguém que seja um espelho de clareza e que não diminua seu brilho, mas que também não aceite submissão cega.</p>
                 <p><strong>Na Saúde Mental:</strong> Sendo o odu que rege diretamente o cérebro e o sistema nervoso central (*Ori*), há forte propensão a exaustão por excesso de controle, insônia crônica decorrente de excesso de pensamento analítico e dores de cabeça tensionais. O mental precisa de silêncio e reconexão espiritual para não entrar em colapso por rigidez excessiva.</p>
@@ -278,9 +340,8 @@
             </div>
         </details>
 
-        <!-- Tópico 5: Mitologia / Itans -->
         <details>
-            <summary>5. Mitologia e Ensinamentos dos Itans Sagrados</summary>
+            <summary>5. Mitologia e Ensinamentos dos Itans (Èjì Ogbè)</summary>
             <div class="content-body">
                 <div class="itan-box">
                     <h3>Itã 1: A Luz que Expõe as Trevas (Iku e Arun)</h3>
@@ -297,20 +358,85 @@
             </div>
         </details>
 
-        <!-- Tópico 6: O Destino (*Ayanmo*) regido por este Odu -->
         <details>
-            <summary>6. O Destino (*Ayanmo*) Regido por Este Odu</summary>
+            <summary>6. O Destino (*Ayanmo*) regido por este Odu (Èjì Ogbè)</summary>
             <div class="content-body">
                 <p>O destino fundamental desenhado por Èjì Ogbè é o de **ser pioneiro, construtor de estruturas e farol para os outros**. As pessoas marcadas fortemente por este odu nascem com a missão de abrir caminhos que antes estavam fechados, seja na família, na comunidade ou em projetos profissionais.</p>
                 <p>Contudo, o carma inerente a esse destino é que **o portador da luz nunca pode se dar ao luxo de transigir com a mentira ou com a desonestidade**. Se tentar usar sua inteligência ou liderança para o mal ou para a exploração alheia, o próprio sistema cósmico encarrega-se de retirar sua coroa e sua clareza. O destino de Èjì Ogbè é reinar através da verdade, da retidão e da sabedoria inegociável do *Ìwà*.</p>
             </div>
         </details>
 
-        <footer>
-            <p>Tratado Avançado de Ifá &bull; Estudo de Odu &bull; Segunda Mão</p>
-        </footer>
 
-    </div>
+        <!-- Divisor entre os Odus -->
+        <hr class="odu-divider">
 
-</body>
-</html>
+
+        <!-- ========================================== -->
+        <!-- PARTE 2: ÈJÌ OYEKU (2º ODU) -->
+        <!-- ========================================== -->
+        <header id="eji-oyeku">
+            <div class="odu-order">2º Odu Principal (Oju Odu) &bull; Tratado da Segunda Mão</div>
+            <h1>Èjì Oyeku (Oyeku Meji)</h1>
+            <div class="odu-sign-visual">
+                O &nbsp; O<br>
+                O &nbsp; O<br>
+                O &nbsp; O<br>
+                O &nbsp; O
+            </div>
+            <p class="subtitle">O grande portal do mistério, da ancestralidade e da transmutação. O ventre da noite que gesta o renascimento e o domínio sobre a estagnação e a morte.</p>
+        </header>
+
+        <details>
+            <summary>1. Pronúncia, Etimologia e Significado Profundo (Èjì Oyeku)</summary>
+            <div class="content-body">
+                <p><strong>Pronúncia Fonética:</strong> <em>Ê-di O-yê-ku</em> (com o "y" pronunciado como semivogal e o "ku" seco).</p>
+                <p><strong>Etimologia e Significado:</strong> <strong>Oyeku</strong> deriva da contração de *Ojiji* (sombra, mistério) ou *Oku* (a morte, o ancestral, o silêncio profundo), associado ao verbo *ku* (cessar, recolher). Literalmente significa "A morte encerra", "O recolhimento definitivo" ou "O duplo poder da noite e dos ancestrais".</p>
+                <p>Na cosmologia de Ifá, Èjì Oyeku é a contraparte Yin de Èjì Ogbè (Yang). Se Ogbè traz a luz que expõe, Oyeku traz a escuridão uterina que abriga, descansa e transforma. É o Odu que rege os mistérios de *Iku* (a morte) e dos *Egungun* (ancestrais coletivos), ensinando que nenhuma transformação real ocorre sem a morte simbólica de velhos ciclos.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>2. A Leitura no Opón Ifá (Èjì Oyeku)</summary>
+            <div class="content-body">
+                <p>Quando Èjì Oyeku se manifesta no tabuleiro, ele indica que o consulente está passando ou precisará passar por um processo profundo de **encerramento, reavaliação ou resguardo**. Não é um Odu de pressa; é um Odu de profundidade, introspecção e reestruturação de bases ocultas.</p>
+                <div class="highlight-box">
+                    <p><strong>Diretrizes Clínicas/Oraculares:</strong></p>
+                    <ul>
+                        <li><strong>Fim de Ciclos Inevitáveis:</strong> Algo na vida do consulente (um emprego, um relacionamento, um padrão de comportamento) chegou ao seu esgotamento natural. Resistir a esse término trará sofrimento prolongado.</li>
+                        <li><strong>Apoio dos Ancestrais (*Egungun*):</strong> O consulente sente-se isolado ou desamparado, mas o Odu revela forte presença e cobrança de alinhamento com a linhagem familiar e ancestral.</li>
+                        <li><strong>Necessidade de Resguardo e Silêncio:</strong> Avisa para não expor planos prematuramente. O que está sendo gestado na vida do consulente ainda está na fase uterina (no escuro) e precisa ser protegido de energias externas.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>3. Pontos de Atenção: Luz e Sombra (Èjì Oyeku)</summary>
+            <div class="content-body">
+                <div class="grid-2">
+                    <div>
+                        <p style="color: var(--accent-gold);"><strong>Aspectos Positivos (Na Luz):</strong></p>
+                        <ul>
+                            <li>Sabedoria profunda, maturidade emocional e discernimento oculto.</li>
+                            <li>Proteção ancestral implacável e forte intuição.</li>
+                            <li>Capacidade cirúrgica de desapegar do que não serve mais.</li>
+                            <li>Paz interior e serenidade diante dos grandes ciclos da vida.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p style="color: #e06c75;"><strong>Aspectos Negativos (Na Sombra):</strong></p>
+                        <ul>
+                            <li>Melancolia crônica, pessimismo paralisante e apego à energia de perda.</li>
+                            <li>Depressão profunda, isolamento social excessivo e medo do futuro.</li>
+                            <li>Tendência a sabotar novos começos por apego ao passado ou ao luto.</li>
+                            <li>Teimosia em manter estruturas mortas por comodismo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>4. Relação com os Aspectos da Vida (Èjì Oyeku)</summary>
+            <div class="content-body">
+                <p><strong>Nos Relacionamentos:</strong> Èjì Oyeku apo
